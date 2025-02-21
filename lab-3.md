@@ -111,28 +111,8 @@ The predicate vehicle? determines whether a value is in fact a Vehicle:
 
 **Exercise 9.** List the signatures for each of the courtesy functions for the instructor structure you have defined above.
 
-## 4 Templates from structures
 
-From the Vehicle data definition, we can define the following template for functions which process Vehicles.
-```racket
-; process-vehicle : Vehicle -> ...
-(define (process-vehicle v)
-  (... (vehicle-company v) ...
-       (vehicle-model v) ...
-       (vehicle-year v) ...))
-```
-
-The template simply (and usefully) unpacks the various data contained in the input structure.
-
-**Exercise 10.** Does the template for processing Departments have a conditional? Does the template for processing Vehicles have a conditional? Why the difference?
-
-**Exercise 11.** Write a template for processing a book.
-
-**Exercise 12.** Write a template for processing an instructor. Because this template contains a Department, it should also contain an application of process-department.
-
-**Exercise 13.** Point out where the data definition for an instructor refers to the data definition for a department. Point out where your template for processing an instructor refers to the template for processing a department in the corresponding place.
-
-## 5 Functions on structures
+## 4 Functions on structures
 
 Here are two functions which have been designed using the template process-vehicle:
 
@@ -179,12 +159,10 @@ Here are two functions which have been designed using the template process-vehic
 (check-expect (salary "English")          130000)
 ```
 
-## 6 Practice with structures
+## 5 Practice with structures
 
 **Exercise 16.** A pet has a name, species and age. Define a structure for a pet.
 
 **Exercise 17.** Define three examples of pets.
 
-**Exercise 18.** Write a template for processing a pet.
-
-**Exercise 19.** Design a function `birthday` which takes a pet and returns another pet with their age increased by one year.
+**Exercise 18.** Design a function `birthday` which takes a pet and returns another pet with their age increased by one year.
