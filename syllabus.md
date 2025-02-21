@@ -1,4 +1,4 @@
-# COMP 115: How to Design a Program
+# COMP 115: How to Design Programs
 ## Professor Information
 **Professor:** Jack Widman  
 **Email:** [jwidman@wesleyan.edu](mailto:jwidman@wesleyan.edu)  
