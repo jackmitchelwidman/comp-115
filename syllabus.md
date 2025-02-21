@@ -1,5 +1,4 @@
-# COMP 115: Introduction to Programming
-
+# COMP 115: How to Design Programs
 ## Professor Information
 **Professor:** Jack Widman  
 **Email:** [jwidman@wesleyan.edu](mailto:jwidman@wesleyan.edu)  
@@ -10,6 +9,9 @@
 **TA:** Charles Pasca  
 **Email:** [cpasca@wesleyan.edu](mailto:cpasca@wesleyan.edu)  
 **TA Office Hours:** Wednesday, 7:30 PM (in our classroom)  
+
+---
+## Book - How to Design Programs - Second Edition. https://bit.ly/4gVv2DA
 
 ---
 
@@ -51,20 +53,6 @@ Your final grade will be determined as follows:
 - **Collaboration:** While discussing concepts with peers is encouraged, all submitted work must be your own.
 - **Late Work:** Extensions may be granted under extenuating circumstances, but you must communicate in advance.
 - **Academic Integrity:** All students must adhere to Wesleyan's academic honesty policies.
-
----
-
-## Course Schedule (Tentative)
-A detailed schedule will be provided separately, covering key topics such as:
-
-- Introduction to Programming & Computational Thinking
-- Variables, Data Types, and Operators
-- Control Flow: Conditionals and Loops
-- Functions and Modular Design
-- Data Structures: Lists, Dictionaries, and Arrays
-- Introduction to Object-Oriented Programming
-- Debugging and Error Handling
-- Final Project Development
 
 ---
 
