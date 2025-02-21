@@ -114,7 +114,7 @@ The predicate vehicle? determines whether a value is in fact a Vehicle:
 
 ## 4 Functions on structures
 
-Here are two functions which have been designed using the template process-vehicle:
+Here are two examples of functions which interact with structures. 
 
 ```racket
 ; praise-vehicle : Vehicle -> String
