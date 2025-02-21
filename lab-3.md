@@ -1,8 +1,6 @@
-# Lab 4: Structures
+# Lab 3: Structures
 
-You may submit this lab to lab4 on Handin (this is optional).
-
-**Important**: Whenever you write a function in this class, follow the design recipe. You will be graded accordingly.
+**Important**: Whenever you write a function in this class, follow the design recipe.
 
 ## 1 Defining structures
 
