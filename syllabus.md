@@ -34,8 +34,8 @@ Your final grade will be determined as follows:
 - **60% – Problem Sets**  
   Weekly programming assignments that reinforce key concepts and encourage hands-on learning.
 
-- **35% – Final Project**  
-  A comprehensive coding project demonstrating your grasp of the course material.
+- **35% – Final Exam**  
+ The final exam is cumulative and will conclude both conceptual questions and coding exercises.
 
 - **5% – Participation in Labs**  
   Engaged participation in lab sessions where you will apply concepts in a collaborative setting.
