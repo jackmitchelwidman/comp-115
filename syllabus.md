@@ -1,5 +1,4 @@
-# COMP 115: Introduction to Programming
-
+# COMP 115: How to Design a Program
 ## Professor Information
 **Professor:** Jack Widman  
 **Email:** [jwidman@wesleyan.edu](mailto:jwidman@wesleyan.edu)  
