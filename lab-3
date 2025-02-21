@@ -1,7 +1,6 @@
-Lab 4: Structures
-You may submit this lab to lab4 on Handin (this is optional).
+Lab 3: Structures
 
-Important: Whenever you write a function in this class, follow the design recipe. You will be graded accordingly.
+Important: Whenever you write a function in this class, follow the design recipe. 
 
 1 Defining structures
 This week we studied a new kind of data type and definition: structures. A structure packages several values into a single new value. Consider the following Vehicle structure, which contains three fields: company, model and year.
