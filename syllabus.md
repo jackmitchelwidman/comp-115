@@ -11,7 +11,7 @@
 **TA Office Hours:** Wednesday, 7:30 PM (in our classroom)  
 
 ---
-## Book - https://edu.anarcho-copy.org/Programming%20Languages/Racket/How%20to%20design%20program%20se.pdf
+## Book - [https://edu.anarcho-copy.org/Programming%20Languages/Racket/How%20to%20design%20program%20se.pdf](https://bit.ly/4gVv2DA)
 
 ---
 
