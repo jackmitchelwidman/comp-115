@@ -11,6 +11,9 @@
 **TA Office Hours:** Wednesday, 7:30 PM (in our classroom)  
 
 ---
+## Book - https://edu.anarcho-copy.org/Programming%20Languages/Racket/How%20to%20design%20program%20se.pdf
+
+---
 
 ## Course Description & Objectives  
 Programming is more than just writing code—it is a way of thinking, problem-solving, and creating. This course introduces students to the fundamental principles of programming, focusing on problem decomposition, algorithmic thinking, and computational logic. By the end of the course, students will:
