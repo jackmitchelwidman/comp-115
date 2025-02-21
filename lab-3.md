@@ -4,7 +4,7 @@
 
 ## 1 Defining structures
 
-This week we studied a new kind of data type and definition: structures. A structure packages several values into a single new value. Consider the following Vehicle structure, which contains three fields: company, model and year.
+Today, we will introduce a new kind of data type and definition: structures. A structure packages several values into a single new value. Consider the following Vehicle structure, which contains three fields: company, model and year.
 
 ```racket
 ; A Vehicle is (make-vehicle String String Number)
