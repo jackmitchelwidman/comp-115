@@ -53,19 +53,5 @@ Your final grade will be determined as follows:
 
 ---
 
-## Course Schedule (Tentative)
-A detailed schedule will be provided separately, covering key topics such as:
-
-- Introduction to Programming & Computational Thinking
-- Variables, Data Types, and Operators
-- Control Flow: Conditionals and Loops
-- Functions and Modular Design
-- Data Structures: Lists, Dictionaries, and Arrays
-- Introduction to Object-Oriented Programming
-- Debugging and Error Handling
-- Final Project Development
-
----
-
 Looking forward to an engaging and rewarding semester!
 
