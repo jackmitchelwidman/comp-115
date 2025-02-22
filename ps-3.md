@@ -34,7 +34,7 @@ We will store zip codes as **Strings** in order to preserve leading zeroes.
 Create a structure definition and a data definition for an address. Call the structure `address` with fields `line1`, `line2`, `city`, `state`, and `zip`.
 
 ### Problem 3
-Write the template for processing an address. Call the template `process-address`.
+Design a struct to represent and address. Decide what fields you want to include. Create 3 instances of the struct, using make-address.
 
 ### Problem 4
 Design a function called `connecticut?` which, given an address, determines if it is in Connecticut. A Connecticut address has a zip code between `06000` and `06999`. The function `string->number` may be useful.
