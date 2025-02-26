@@ -1,6 +1,6 @@
 # Problem Set 3: Functions and Objects
 
-**Important:** Whenever you write a function in this class, follow the design recipe. You will be graded accordingly.
+**Important:** Whenever you write a function in this class, follow the design recipe. 
 
 ## 1. Structures
 
