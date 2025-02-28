@@ -1,4 +1,6 @@
-# Problem Set: Paddles (Inspired by Pong)
+# Problem Set 4: 
+
+#Paddles (Inspired by Pong)
 
 1. Create a **paddle** (like in Pong) and place it on the **right side** of the screen, in the **middle vertically**.
 
