@@ -3,7 +3,7 @@
 **Professor:** Jack Widman  
 **Email:** [jwidman@wesleyan.edu](mailto:jwidman@wesleyan.edu)  
 **Office:** Exley 637  
-**Office Hours:** Wednesday & Thursday, 11:00 AM – 1:00 PM (and by appointment)  
+**Office Hours:** Wednesday & Thursday, 11:30 AM – 1:00 PM (and by appointment)  
 
 ## Teaching Assistant
 **TA:** Charles Pasca  
