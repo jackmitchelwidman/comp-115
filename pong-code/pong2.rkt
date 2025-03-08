@@ -13,20 +13,29 @@
 (define START-X (- WIDTH 20))
 (define START-Y (/ HEIGHT 2))
 (define BALL-RADIUS 20)
-(define BALL-SPEED 5)  ;; Speed of ball movement
+(define BALL-SPEED 5)  
+(define HALF-OF-PADDLE-WIDTH (/ PADDLE-WIDTH 2))
+(define paddle (rectangle PADDLE-WIDTH PADDLE-HEIGHT "solid" "grey"))
+(define ball (circle BALL-RADIUS "solid" "black"))
 
-;; Structures
+;; Structs
 (define-struct pos [x y])  ;; For paddle position
 (define-struct game [paddle-pos ball-pos])  ;; Combined game state
 
-
+;; Constants that use structs
 (define INITIAL-PADDLE-POS (make-pos START-X START-Y))
 (define INITIAL-BALL-POS (make-pos 50 500))  ;; Start ball on left side
 (define INITIAL-STATE (make-game INITIAL-PADDLE-POS INITIAL-BALL-POS))
 
+;; Functions
+(define (center-of-paddle paddle-x)
+  paddle-x)
 
-(define paddle (rectangle PADDLE-WIDTH PADDLE-HEIGHT "solid" "grey"))
-(define ball (circle BALL-RADIUS "solid" "black"))
+(define (paddle-left-edge paddle-x)
+  (- (center-of-paddle paddle-x)  HALF-OF-PADDLE-WIDTH))
+
+(define (ball-right-edge ball-x)
+  (+ ball-x BALL-RADIUS))
 
 (define (render state)
   (place-image ball 
@@ -53,17 +62,19 @@
       (game-ball-pos state))]
     [else state]))
 
-;; Detect when ball touches the paddle
-(define (ball-at-edge? ball-x-pos paddle-x-pos)
-  ;; Ball right edge >= paddle left edge
-  (>= (+ ball-x-pos BALL-RADIUS) (- paddle-x-pos (/ PADDLE-WIDTH 2))))
+
+
+(define (ball-at-edge? ball-x paddle-x)
+  (> (ball-right-edge ball-x)  (paddle-left-edge paddle-x)))
+
 
 ;; Helper function to adjust x position if it touches the paddle
-(define (adjust-x-position ball-x-pos paddle-x-pos)
-  (if (ball-at-edge? ball-x-pos paddle-x-pos)
+(define (adjust-x-position ball-x paddle-x)
+  (if (ball-at-edge? ball-x paddle-x)
       ;; Position ball so its right edge touches paddle's left edge
-      (- paddle-x-pos (/ PADDLE-WIDTH 2) BALL-RADIUS)
-      ball-x-pos))
+      (- paddle-x (/ PADDLE-WIDTH 2) BALL-RADIUS)
+      ball-x))
+
 
 (define (move-ball state)
   (make-game
@@ -78,11 +89,9 @@
 (define (new-x-position current-x)
   (+ current-x BALL-SPEED))
 
-
-
 ;; Start the game
 (big-bang INITIAL-STATE  ;big-bang needs a game object
   [to-draw render]
   [on-key handle-key]
-  [on-tick move-ball 1/30])
+  [on-tick move-ball 1/100])
 
