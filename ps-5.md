@@ -1,7 +1,7 @@
-# Problem Set 5 (Due Friday, March 29
+# Problem Set 5 (Due Friday, March 29)
 
 ## Problem 3
-Copy the code from Problem 2 and make the following modification. When the ball reaches the halfway point, it should turn right and move until it hits the right side of the screen. Use the same naming conventions as above.    
+Copy the code from Problem 2 and make the following modification. When the ball reaches the halfway point, it should turn right and move until it hits the right side of the screen. As always,  use the same naming conventions as above.    
 
 ## Problem 4
 Make a paddle on the left side of the screen. Position it in the middle of the left side. Create and start a ball on the right side near the top of the screen and make it move horizontally until it hits the left side of the screen. Have the computer move the paddle to move towards and hit the ball. 
