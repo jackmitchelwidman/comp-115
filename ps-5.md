@@ -1,5 +1,12 @@
 # Problem Set 5 (Due Friday, March 29)
 
+## Problem 1
+Make a circle that starts on the top left side of the screen and moves towards the right. When it reaches the center, it should move down, until it hits the bottom of the screen and stops.
+
+## Problem 2
+Copy the code from Problem 1 and make the following modification.
+When the ball hits the bottom of the screen, it should change direction and move up until it hits the center. Then it should stop.  
+
 ## Problem 3
 Copy the code from Problem 2 and make the following modification. When the ball reaches the halfway point, it should turn right and move until it hits the right side of the screen. As always,  use the same naming conventions as above.    
 
