@@ -1,4 +1,4 @@
-# Problem Set 6 (Due Sunday, April 6th)
+# Problem Set 6 (Due Sunday, April 6th at 8pm)
 
 ## Problem 1
 Create a list called 'numbers', that contains the whole numbers from 1 to 10.
