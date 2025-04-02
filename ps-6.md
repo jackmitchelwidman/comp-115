@@ -7,7 +7,7 @@ Create a list called 'numbers', that contains the whole numbers from 1 to 10.
 Create a function called 'first-square' that takes a list of numbers, and returns the square of the first number.
 
 ## Problem 3
-Create a struct called 'account', with the fields 'id', 'company' and 'is-up-to-date'. Then create three companies called 'company1', 'company2' and 'company3'. Fill in reasonable values for the fields. The field 'is-up-to-date' is a boolean and so should get either #t or #f.
+Create a struct called 'account', with the fields 'id', 'company' and 'is-up-to-date'. Then create three accounts called 'account1', 'account2' and 'account3'. Fill in reasonable values for the fields. The field 'is-up-to-date' is a boolean and so should get either #t or #f.
 
 
 ## Problem 4 
