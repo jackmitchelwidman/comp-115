@@ -1,0 +1,209 @@
+#lang racket
+
+
+;; lists
+(define numbers (list 1 2 3 4 5))
+
+(define number2 '(1 2 3 4 5))
+
+(car numbers)
+(cdr numbers)
+
+;; Create a function that takes a list of numbers and returns all but the second number.
+
+(define (all-but-second numbers)
+  (cons (car numbers) (cdr (cdr numbers))))
+
+
+(all-but-second '(3 4 5 6 7))
+
+(cons 1 '(2 3 4))
+
+(define evens '(2 4 6 8 10))
+evens
+
+(car evens)
+(cdr evens)
+
+;; How can I get '(6 8 10) from the list evens?
+(cdr (cdr evens))
+(last evens)
+
+;; Here is a new function called 'reverse'
+(reverse numbers)
+
+;; How can we add a number to the end of a list
+(reverse (cons 100 (reverse numbers)))
+
+
+;; Here is a new function called remove
+(remove 1000 numbers)
+
+
+;; We have car, cdr, cons, remove, reverse
+
+(last evens)
+;;car and first are identical and rest and cdr are identical
+
+'()
+(list 1 2 3)
+
+
+(define-struct account [id name is-up-to-date?])
+;; We get for free, make-account, account-id, account-name, account-is-up-to-date? and account?
+;; Let's make an account
+
+(define account1 (make-account 1 "Chase" #t))
+
+account1
+(account-name account1)
+
+;; Let's two more accounts
+(define account2 (make-account 2 "Bank of America" #f))
+
+(define account3 (make-account 3 "Wells Fargo" #t))
+
+(define accounts (list account1 account2 account3))
+accounts
+
+;; How do I get a list of the names of the accounts from the list account
+(list (account-name account1) (account-name account2) (account-name account3))
+
+;; Write a function that takes a list of accounts and returns a list of their names
+;; We need a way to take a list and a function and apply the function to every element in the list
+
+;; we want to take, for example, '(1 2 3) and return '(1 4 9)   the squares of the numbers
+;; sqr
+(sqr 3)
+
+;; How we to take the list '(1 2 3) and the function sqr and get the list '(1 4 9)
+;; The function is map
+
+(map sqr '(1 2 3))
+
+(define (account-names  accounts)
+  (map account-name accounts))
+
+(account-names accounts)
+
+;; Write a function that takes a list of numbers and returns a list of booleans, true if the number is even, and false if the number is odd
+
+;; for example '(1 2 3 4) => (#f #t #f #t)
+
+
+;; We need a function, i'll  call 'is-even?'
+(define (is-even? n)
+  (= (modulo n 2) 0))
+
+(is-even? 5)
+(is-even? 2)
+
+(define (is-even numbers)
+  (map is-even? numbers))
+
+(is-even '(1 2 3 4 5 6))
+
+;; Given a list of numbers, how can we return a list of only the even ones.
+;; '(1 2 3 4 5 6)
+
+;; a predicate is a function that returns a boolean
+;; In common language, this would be called a property
+
+
+
+;; It would be nice if there were a function that could do this for us.
+;; There is function that does this. It is called 'filter'
+;; filter takes a predicate and a list and returns all the elements of the list for which the predicate is true.
+(filter is-even? '(1 2 3 4 5 6))
+
+(account-names accounts)
+
+;; How would I get a list of the account ids from the list account
+(map account-id accounts)
+
+;; We want all the companies whose id is greater than 1
+;; Let's create a function to express this predicate greater than one.
+(define (greater-than-one? n)
+  (> n 1))
+
+(greater-than-one? 0)
+
+;;(map greater-than-one?  accounts) ;; ;; ERROR
+
+(map greater-than-one? (map account-id accounts))
+
+;; What we really want is to give a list of accounts and return a list of those accounts whose id is greater than one.
+
+;; We want a function that takes an account, returns #t if the accounts id is greater than one and false otherwise
+(define (account-id-is-greater-than-one?  account)
+  (>
+   (account-id account)
+   1))
+
+(account-id-is-greater-than-one? account2)
+
+(map account-id-is-greater-than-one? accounts)
+
+(filter account-id-is-greater-than-one? accounts)
+
+;; How we can we see the names
+
+(map account-name (filter account-id-is-greater-than-one? accounts))
+
+;; we can use map and filter and the other functions in creative ways to create very many various functions
+
+;; 'filter' says "here's a bunch of things and a property of those things and I will return a list of those things that have that property'
+
+
+;;n modulo k   means 'divide n by k and give me the remainder
+;9 modulo 4 => 1
+
+;13 modulo 12 => 1
+
+;; even and odd are special examples of modulo arithmetic
+;; modulo 3 gives three answers 0 1 2
+
+
+accounts
+
+(define account4 (make-account 4 "People's Bank" #t))
+
+(cons account4 accounts)
+
+;; remove and reverse
+;; Remember the trick of reversing a list, doing something to it and reversing it again - That's how we do things to the end of a list. 
+                              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
