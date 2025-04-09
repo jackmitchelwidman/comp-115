@@ -1,0 +1,143 @@
+#lang racket
+
+;; A database is container for data that is secure and allows the user to update and query the data
+;; A database contains a collections of tables.
+;So if you query a database, you will get back a bunch of rows.
+;;A database is composed of tables and each table is composed of rows.
+;; We want a user table. ;; The table is called users
+;;So if we want, for example, all the names of all the users, and we ask the database
+;; it will return a set of rows, one row for each users.
+
+;;We will create a song database
+;;We need songs, artists bands;; These will be the tables
+;; We will use a struct, for example for song, artist and band.
+
+;;Let's create a database
+
+(define-struct table [id name rows]) ;; rows is a list of objects, for example songs or bands
+(define-struct database [id name tables]) ;;tables is a list of table objects.
+
+;;   (make-song 1 "Yesterday" ”the-beatles "Pop" 1965)
+
+;;Lets define artist
+(define-struct artist [id name nationality])
+
+;; Lets define band
+(define-struct band [id name year-founded artists]) ;;artists is a list of artist object
+
+;;Lets define a song struct
+(define-struct song [id name band genre year])
+
+;;We want bands but also artists. a band., and a band contains a list of artists. 
+
+
+(define lennon (make-artist 1 "John Lennon" "Great Britian"))
+(define mccartney (make-artist 2 "Paul McCartney" "Great Britian"))
+(define harrison (make-artist 3 "George Harrison" "Great Britian"))
+(define starr (make-artist 4 "Ringo Starr" "Great Britian"))
+                                                    
+                                                     
+
+(define the-beatles (make-band 1 "The Beatles" 1960 (list lennon mccartney harrison starr)))
+                                                    
+
+
+
+;;Now lets create the tables
+(define songs (make-table 1 "songs" (list
+                                     (make-song 1 "Yesterday" the-beatles "Pop" 1965)
+                                     (make-song 2 "Hey Jude" the-beatles "Rock" 1968)
+                                     (make-song 3 "Let It Be" the-beatles "Rock" 1970)
+                                     (make-song  4 "Strawberry Fields Forever" the-beatles "Psychedelic Rock" 1967)
+                                     (make-song 5 "Penny Lane" the-beatles "Pop" 1967)
+                                     (make-song 6 "All You Need Is Love" the-beatles "Pop" 1967)
+                                     (make-song 7 "Come Together" the-beatles "Rock" 1969)
+                                     (make-song 8 "Something" the-beatles "Rock" 1969)
+                                     (make-song 9 "Eleanor Rigby" the-beatles "Baroque Pop" 1966))))
+
+(define artists (make-table 2 "artists" (list lennon mccartney harrison starr)))
+                                         
+;; Lets make a list of all the artists' names
+
+(table-rows artists) ;;This step gives us a list of artists
+;;We want to get the names out of the artist objects
+(map artist-name (table-rows artists))
+
+;;Let's create the database
+ ;;tables is a list of table objects
+
+(define db (make-database 1 "Jupiter" (list songs artists)))
+
+;;What is the name of the database db.
+(database-name db)
+
+;;Give me a list of the tables.
+(database-tables db)
+
+;; Give me a list of the names of all the tables
+(database-tables db)
+(map table-name (database-tables db))
+
+;; Let's get the names of "all" the beatles songs
+(map song-name (table-rows songs))
+
+;; There's a function we need to create strings with variables in them.
+(define width 300)
+;;We want to write the string "The width is 300"
+(format "The width is ~a" width)
+
+
+(define (id-is-greater-than-5? song)
+  (> (song-id song) 5))  ;;THIS IS MEANT ONLY FOR ILLUSTRATIVE PURPOSES #BAD-CODE
+
+;;Give me all the songs with id > 5
+;; Let get all the songs
+(filter id-is-greater-than-5?  (table-rows songs)) ;;When we learn lambda, we will do this the right way.
+
+;;lambda should have been called 'make-function'
+
+
+;;Things we might want to do with a database
+;;once in awhile things
+;; i) Add a table ;; Lets say you create a new table called logging and you want to add it to the database.
+;; ii) Modify the structure of a table
+
+;;things you do all the time
+;;i) add a song to the songs table
+
+;;Lets add a table to the database; We want a function that takes a table and a database and creates a new databases
+;; whose tables are the tables of the given database plus new database
+
+(define-struct genre [id name year-founded])
+
+(define genre1 (make-genre 1 "Pop" 1953))  ;;These years are made up
+(define genre2 (make-genre 1 "Roc" 1950))
+
+
+
+(define genres (make-table 3 "genres" (list genre1 genre2)))
+
+;; Lets make a function add-table
+(define (add-table-first-attempt table database)
+  (cons table (database-tables database)))  ;;This almost does what we want
+;;The above will return a list of tables and we want a database
+
+
+;;Here is the solution
+(define (add-table table database)
+  (make-database  2 "Jupiter"
+                  (cons table  (database-tables database))))
+
+(define db2 (add-table genres db))
+
+db2
+                   
+                                  
+
+
+
+
+
+
+
+
