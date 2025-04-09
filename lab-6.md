@@ -14,4 +14,4 @@ Using the code from problem 1, create a list of students called 'students'. Make
 Create a function that takes a list of students and returns a list of the grades for test 2. 
 
 ## Problem 4
-Create a function that takes a list of students and and a grade, and returns a list of those students who passed the test. Let's say passing is 65. 
+Create a function that takes a list of students and returns a list of those students who passed test1. Let's say passing is 65. 

@@ -14,6 +14,10 @@
 ## Book - How to Design Programs - Second Edition. https://bit.ly/4gVv2DA
 
 ---
+## Racket Documentation - https://docs.racket-lang.org/
+
+----
+
 
 ## Course Description & Objectives  
 Programming is more than just writing code—it is a way of thinking, problem-solving, and creating. This course introduces students to the fundamental principles of programming, focusing on problem decomposition, algorithmic thinking, and computational logic. By the end of the course, students will:
