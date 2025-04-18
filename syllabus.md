@@ -12,6 +12,7 @@
 
 ## Final Exam
 section 1 - Friday May 16th, 2-5 PM
+
 section 2 - Tuesday, May 13th, 9-12 PM 
 
 
