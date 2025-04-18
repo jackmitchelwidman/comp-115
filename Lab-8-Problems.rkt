@@ -1,0 +1,58 @@
+#lang racket
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Lab Problem 1
+;; There is a new file in the data folder in github. It is also called words. I replaced the old one with his
+;; list which is cleaner. It is the 10,000 most common English words, according to one source.
+;; Load the file into a list called 'word-list'. Make sure to remove duplicates and make all the words lower-case. The
+;; remove duplicates function is called 'remove-duplicates' and the make lower case function is called 'string-downcase'. 
+
+
+;; Lab Problem 2
+;; Print the length of the list 'word-list'.
+
+
+;; Lab Problem 3
+;; Print a list of the lengths of the words in word-list
+
+;; Lab Problem 4
+;; Print a list of all the words in word-list but in upper case. The function is called 'string-upcase'.
+
+;; Lab Problem 5
+;; Create and print a list called 3-letter-words which consists of all the words in word-list which have 3 letters.
+
+;; Lab Problem 6
+;; Recall the defintion of are-anagrams?
+(define (are-anagrams? word1 word2)
+  (and
+   (= (string-length word1) (string-length word2))
+   (equal?
+    (sort (string->list word1) char<?) (sort (string->list word2) char<?))))
+
+;; Use this function to create a function called 'anagrams-of' which takes a word and returns a list of all the words in
+;; word-list that are anagrams of it. Note - This will include the word itself, which is ok. 
+
+
+
+;; Lab Problem 7
+;; Use the function from Problem 6, called 'anagrams-of', to create a list of lists. The inner lists will be the anagrams of
+;; a given word. So it will be a list of lists, each list of which is a list of a word and its anagrams.
+;; Hint - try mapping the appropriate function over every word in 'word-list'
+
+
+;; Lab Problem 8
+;; Create and print a list called  'words-by-length', which consists of all the words in 'word-list' ordered by word length. ;;
+;; If two words have the same length, any order is fine. Hint- for the order function, use a lambda
+
+
+;; Lab Problem 9 - tricky
+;; When you have two lists, list-1 and list-2, and you want a new list of pairs where the first pair is the pair of first
+;; elements of list-1 and list-2, and the second pair is the pair of second elements of list-1 and list-2 etc, you can do
+;; this - (map list list-1 list2).
+;; Using this approach, take as the first list, word-list, and as the second list - word-list sorted by length of words,
+;; and determine if, by chance, any of the words are in the same position in the new list. When sorting a list of words,
+;; use 'string<?' as opposed to 'char<?' which is used when sorting a word. (i.e. alphabetizing)
+;; Hint - First define the list of pairs of words and then filter over it with an appropriate lambda function. 
+; I will explain this. 
+
+                                   
