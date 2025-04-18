@@ -6,11 +6,13 @@
 ;; list which is cleaner. It is the 10,000 most common English words, according to one source.
 ;; Load the file into a list called 'word-list'. Make sure to remove duplicates and make all the words lower-case. The
 ;; remove duplicates function is called 'remove-duplicates' and the make lower case function is called 'string-downcase'. 
+(define word-list (file->lines "/Users/jackwidman/words"))
+;;Modify The above line to do two things - i) remove duplicates and ii)make every word lower case
 
 
-;; Lab Problem 2
+Lab Problem 2
 ;; Print the length of the list 'word-list'.
-
+(length word-list)  ;;  Check that this is 10,000
 
 ;; Lab Problem 3
 ;; Print a list of the lengths of the words in word-list
@@ -40,6 +42,10 @@
 ;; Hint - try mapping the appropriate function over every word in 'word-list'
 
 
+;; Lab Problem 7.5
+;; Take the list that comes from problem 7 and filter it to get only those lists that have more than one element.
+;; The lambda shoulud take a list and return true if its length is > 1 and false otherwise. 
+
 ;; Lab Problem 8
 ;; Create and print a list called  'words-by-length', which consists of all the words in 'word-list' ordered by word length. ;;
 ;; If two words have the same length, any order is fine. Hint- for the order function, use a lambda
@@ -55,4 +61,7 @@
 ;; Hint - First define the list of pairs of words and then filter over it with an appropriate lambda function. 
 ; I will explain this. 
 
-                                   
+ ;; Extra Credit *
+ ;;  Do Problem 6 without sorting. In other words, find a way to tell if two words are anagrams without sorting them. It should be more efficient than sorting. You can tell if one function
+;; is more efficient by running the two functions with a large input. For example, 10,000 words. 
+
