@@ -40,14 +40,16 @@ Lab Problem 2
 ;; Use the function from Problem 6, called 'anagrams-of', to create a list of lists. The inner lists will be the anagrams of
 ;; a given word. So it will be a list of lists, each list of which is a list of a word and its anagrams.
 ;; Hint - try mapping the appropriate function over every word in 'word-list'
+;; NOTE: If you do this correctly, when you run it, it will take some time to run. (Probably less than 10 seconds. In DrRacket,
+;; on the bottom right, you will see an animation of a little person running. This means the program is running and hasn't completed yet. 
 
 
 ;; Lab Problem 7.5
 ;; Take the list that comes from problem 7 and filter it to get only those lists that have more than one element.
-;; The lambda shoulud take a list and return true if its length is > 1 and false otherwise. 
+;; The lambda should take a list and return true if its length is > 1 and false otherwise. 
 
 ;; Lab Problem 8
-;; Create and print a list called  'words-by-length', which consists of all the words in 'word-list' ordered by word length. ;;
+;; Create and print a list called  'words-by-length', which consists of all the words in 'word-list' ordered by word length. 
 ;; If two words have the same length, any order is fine. Hint- for the order function, use a lambda
 
 
@@ -63,5 +65,7 @@ Lab Problem 2
 
  ;; Extra Credit *
  ;;  Do Problem 6 without sorting. In other words, find a way to tell if two words are anagrams without sorting them. It should be more efficient than sorting. You can tell if one function
-;; is more efficient by running the two functions with a large input. For example, 10,000 words. 
+;; is more efficient by running the two functions with a large input. For example, 10,000 words. If both functions give their result immediately, try this on a bigger list, say
+;; 100,000 words. You can find long lists of words on Google.  There is also a website called Kaggle, ( https://www.kaggle.com/ ). It is all about data science and everything data.
+;; On the left side of the homepage, there is a link called 'Datasets'. You can find all sorts of interesting and useful data here. 
 
