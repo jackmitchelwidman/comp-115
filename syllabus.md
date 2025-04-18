@@ -10,6 +10,13 @@
 **Email:** [cpasca@wesleyan.edu](mailto:cpasca@wesleyan.edu)  
 **TA Office Hours:** Wednesday, 7:30 PM (in our classroom)  
 
+## Final Exam
+section 1 - Friday May 16th, 2-5 PM   (In our classroom)
+
+section 2 - Tuesday, May 13th, 9-12 PM (In our classroom)
+
+
+
 ---
 ## Book - How to Design Programs - Second Edition. https://bit.ly/4gVv2DA
 
