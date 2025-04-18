@@ -11,9 +11,9 @@
 **TA Office Hours:** Wednesday, 7:30 PM (in our classroom)  
 
 ## Final Exam
-section 1 - Friday May 16th, 2-5 PM
+section 1 - Friday May 16th, 2-5 PM   (In our classroom)
 
-section 2 - Tuesday, May 13th, 9-12 PM 
+section 2 - Tuesday, May 13th, 9-12 PM (In our classroom)
 
 
 
