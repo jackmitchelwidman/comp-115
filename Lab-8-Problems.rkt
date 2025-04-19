@@ -10,9 +10,9 @@
 ;;Modify The above line to do two things - i) remove duplicates and ii)make every word lower case
 
 
-Lab Problem 2
+;;Lab Problem 2
 ;; Print the length of the list 'word-list'.
-(length word-list)  ;;  Check that this is 10,000
+;(length word-list)  ;;  Check that this is 10,000
 
 ;; Lab Problem 3
 ;; Print a list of the lengths of the words in word-list
@@ -34,7 +34,13 @@ Lab Problem 2
 ;; Use this function to create a function called 'anagrams-of' which takes a word and returns a list of all the words in
 ;; word-list that are anagrams of it. Note - This will include the word itself, which is ok. 
 
+(define (anagrams-of word)
+  (filter (lambda (w) (are-anagrams? w word))  word-list))
 
+
+;(anagrams-of "enemy")
+
+;(anagrams-of "latitude")
 
 ;; Lab Problem 7
 ;; Use the function from Problem 6, called 'anagrams-of', to create a list of lists. The inner lists will be the anagrams of
@@ -42,6 +48,12 @@ Lab Problem 2
 ;; Hint - try mapping the appropriate function over every word in 'word-list'
 ;; NOTE: If you do this correctly, when you run it, it will take some time to run. (Probably less than 10 seconds. In DrRacket,
 ;; on the bottom right, you will see an animation of a little person running. This means the program is running and hasn't completed yet. 
+
+(define anagrams (map anagrams-of word-list))
+
+(filter (lambda (lst) (> (length lst) 1)) anagrams)
+
+
 
 
 ;; Lab Problem 7.5
