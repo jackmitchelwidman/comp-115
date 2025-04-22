@@ -48,7 +48,7 @@
 ;; this - (map list list-1 list2).
 ;; Using this approach, take as the first list, word-list, and as the second list - word-list sorted by length of words,
 ;; and determine if, by chance, any of the words are in the same position in the new list. When sorting a list of words,
-;; use 'string<?' as opposed to 'char<?' which is used when sorting a word. (i.e. alphabetizing)
+
 ;; Hint - First define the list of pairs of words and then filter over it with an appropriate lambda function. 
 ; I will explain this. 
 
