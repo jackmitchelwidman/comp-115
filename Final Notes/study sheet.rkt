@@ -264,4 +264,25 @@
                  (anagram-groups (list "abc" "cab" "x" "enemy" "yemen"))
                  (displayln "Finding all anagram groups for the list word-list of 10,000 words")
                  (anagram-groups word-list)
-                   
+
+;;         22) How to remove duplicate characters from a string without necessarily maintaining the original order of the characters.
+;;             Problem - Create a function called remove-duplicate-characters that takes a string and returns a string that
+;;                       has the same characters but each one only occurs once. Its ok if the order is changed. You may also
+;;                       assume all the characters are lowercase.
+;;             Guiding Principles
+;;             i) When you have a problem that mentions 'unique' something, or removing of duplicates,
+;;                think 'HASH TABLE'. The reason is that keys in a hash table are automatically unique.
+;;                You CAN have two keys with the same value. But you CANNOT have the same key twice, each going
+;;                to a different value. Think of keys as a way to identify a pair in a hash table. 
+;;             Solution
+               (define (remove-duplicate-characters s)
+                 (define character-map (make-hash))
+                 (for ([c (string->list s)])
+                   (hash-set! character-map c c)) ;; We don't care about the values. Only the keys.
+                 (list->string (hash-keys character-map))) ;; Remember, each key only occurs once. 
+;;             Test
+               (displayln "Removing duplicate characters from 'alabama")
+               (remove-duplicate-characters "alabama")
+                 
+
+
