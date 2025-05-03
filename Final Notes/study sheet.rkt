@@ -145,11 +145,11 @@
 ;;        15) How to create a (mutable) hash map.
 ;;            Problem - Create a hash map called word-lengths and initialize it with three words and their lengths.
 ;;            Solution
-              (define word-lengths (make-hash (list (cons "hello" 5) (cons "goodbye" 7) (cons "antidisestablishmentarianism" 28))))
+              (define some-word-lengths (make-hash (list (cons "hello" 5) (cons "goodbye" 7) (cons "antidisestablishmentarianism" 28))))
 ;;            Irrelevant Remark - This word is the 6th longest word in the Oxford English Dictionary.
 ;;            Test
               (displayln "Getting the lengths of strings from a hash table.")
-              word-lengths
+              some-word-lengths
 
 ;;         16) How to load a file. 
 ;;             Problem - Load the file words or words.txt (depending on what you called it when you downloaded it) into a
@@ -283,6 +283,57 @@
 ;;             Test
                (displayln "Removing duplicate characters from 'alabama")
                (remove-duplicate-characters "alabama")
+
+
+;;             23) How to get all keys in a hash table for a given value.
+;;                 Problem - Create a function that takes a hash table and a value and returns a list of all
+;;                           the keys for that value.  Then use hash-get-keys-for-value to get a list
+;;                 of all the words in that list that have length 11.
+;;         
+;;                 Solution
+                   (define (hash-get-keys-for-value hash-table value)
+                      (filter (lambda (key) (equal? (hash-ref hash-table key) value))
+                          (hash-keys hash-table)))
+;;                 Test
+;;                 Let's create a map whose keys are the 10,000 words in word-list, and whose values
+;;                 are the lengths of those words,and then apply hash-get-keys-for-value to it to get
+;;                 the words of length 11.
+                   (define word-lengths-hash (make-hash))
+                     (for ([word word-list])
+                       (hash-set! word-lengths-hash word (string-length word)))
+                    
+
+                   (displayln "Getting all words in word-list whose length is 11")
+                   (hash-get-keys-for-value word-lengths-hash 11)
+
+
+;;         24) Given a list of words, how to get the words of maximum length.
+;;             Problem
+;;             Create a function called get-words-of-maximum-length that takes a list of strings,
+;;             and returns a list of those strings of maximum length. (You get the largest length
+;;             of any string in the list, and then create a hash table of words to their lengths,
+;;             and find the words (there may be more than one) that have that maximum length.
+;;
+;;             REMARK - You can use the code from problem 23 to create the hash table of strings
+;;                      to their lengths.
+;;                      Also, to find the max of a list of numbers, you can do this:
+;;                      (apply max '(1 7, 3, 5))
+
+;;             Solution
+               
+              (displayln "Getting the max length of a word in word-list and then getting all
+                           of the words in the list of that length")
+
+              (define (get-words-of-maximum-length words) ;; words is a list of strings
+                (define word-lengths-hash (make-hash))
+                (for ([word word-list])
+                  (hash-set! word-lengths-hash word (string-length word)))
+                (define max-length (apply max (hash-values word-lengths-hash)))
+                (hash-get-keys-for-value word-lengths-hash max-length))
+
+              (get-words-of-maximum-length word-list)
+
+
                  
 
 
