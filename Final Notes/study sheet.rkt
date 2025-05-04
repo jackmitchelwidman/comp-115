@@ -334,6 +334,108 @@
               (get-words-of-maximum-length word-list)
 
 
+;;         25) - Using Recursion to create a sum function
+;;               Problem - Create a function called sum, using recursion, that takes a list of numbers,
+;;                         and returns their sum
+;;               Solution
+                 (define (sum numbers) ;; numbers is a list
+                   (if
+                    (empty? numbers) 0
+                    (+ (first numbers) (sum (rest numbers)))))
+
+                    (displayln "Computing the sum of a list of the numbers 1 to 10, with a recursive function.")
+                    (sum '(1 2 3 4 5 6 7 8 9 10))
+
+
+;;         26) - Using Recursion to create a product function
+;;               Problem - Create a function called product, using recursion, that takes a list of numbers,
+;;                         and returns their product. Should be 55
+;;               Solution
+
+                (define (product numbers) ;; numbers is a list
+                  (if
+                   (empty? numbers) 1
+                   (* (first numbers) (product (rest numbers)))))
+
+                (displayln "Computing the product of a list of the numbers 1 to 5, with a recursive function. Should be 120")
+                (product '(1 2 3 4 5))
+
+
+;;         27) - Combining booleans with the boolean operator 'and'.
+;;               Problem - Create a function called and-all with recursion, which takes a list of booleans and returns #t if all the
+;;                         booleans are #t and #f otherwise. You can use the built in speicial form 'and' which takes two
+;;                         booleans and returns #t if both are #t and #f otherwise.
+;;               Solution
+                 (define (and-all booleans)
+                   (if
+                    (empty? booleans) #t  ;; Why do we want #t here? Think about it.
+                    (and (first booleans) (and-all (rest booleans)))))
+
+;;               Test
+                 (displayln "Combining a list of booleans by and-ing then together with recursion.")
+                 (and-all (list #t #t #t)) ;; should return #t
+                 (and-all (list #t #f #t)) ;; should return #f
+
+
+;;         28) - Combining booleans with the boolean operator 'or'.
+;;               Problem - Create a function called or-all with recursion, which takes a list of booleans and returns #t if at least
+;;                         one of the booleans is #t and #f otherwise. You can use the built in speicial form 'or' which takes two
+;;                         booleans and returns #t if at least one is #t and #f otherwise.
+;;               Solution
+                (define (or-all booleans)
+                  (if
+                   (empty? booleans) #f  ;; Why do we want #f here? Think about it. 
+                   (or (first booleans) (or-all (rest booleans)))))
+
+;;               Test
+                 (displayln "Combining a list of booleans by or-ing then together with recursion.")
+                 (or-all (list #f #t #f)) ;; should return #t
+                 (or-all (list #f #f #f)) ;; should return #f
+
+
+
+;;         29) - Concatenating strings. 
+;;               Problem - Create a function called concat with recursion, which takes a list of strings and returns
+;l;                        the strings concatenated together. You can use the built in function 'string-append' which takes two
+;;                         strings and concatenates then, 
+;;               Solution
+                 (define (concat strings)
+                 (if
+                  (empty? strings) ""
+                  (string-append (first strings) (concat (rest strings)))))
+
+;;               Test
+                  (displayln "Concatenating a list of strings with recursion.")
+                  (concat (list "What's" " "  "up?")) 
+
+
+
+;;         30) Abstracting a common function from the last five functions, sum, product, and-all, or-all and concat, with recursion.
+;;             Problem - Create a function called 'combine', which generalizes the functions sum, product, and-all, or-all and concat,
+;;                       with recursion. By 'generalizes', I mean that you should be able to create any of those functions by calling
+;;                       combine, with the right arguments.
+;;             Solution
+               (define (combine lst neutral-value operation) ;; here 'operation' represents the '+',"*', 'and', 'or' and 'string-append'.
+                                                             ;; neutral-value is the value that when combined with another value with the
+                                                             ;; operation, leaves the value unchanged. Like 0, 1, #t, #f and "".
+                 (if (empty? lst) neutral-value
+                     (operation (first lst) (combine (rest lst) neutral-value operation))))
+;;             Test
+               (displayln "Creating the function 'sum' with combine and applying it to '(1 2 3 4)")
+               (combine '(1 2 3 4) 0 +)
+               (displayln "Creating the function 'product' with combine and applying it to '(1 2 3 4)")
+               (combine '(1 2 3 4) 1 *)
+               (displayln "Creating the function 'and-all' with combine and applying it to '(#t #t #t)") ;; should be #t
+               ;; 'and' is not a function. It is a special form. So we need to wrap in a lambda. 
+               (combine '(#t #t #t) #t (lambda (b1 b2) (and b1 b2)))
+               (displayln "Creating the function 'or-all' with combine and applying it to '(#f #f #f)")  ;; should be #f
+               ;;  'or' is not a function. It is a special form. So we need to wrap it in a lambda.
+               (combine '(#f #f #f) #f (lambda (b1 b2) (or b1 b2)))
+               (displayln "Creating the function 'concat' with combine and applying it to '('Once ' 'upon ' 'a ' 'time.')")
+               (combine '("Once " "upon " "a " "time") "" string-append) 
                  
 
 
+                
+
+ 
