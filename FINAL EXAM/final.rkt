@@ -5,6 +5,8 @@
 ;; For every problem, please test your answer and precede the test with the word 'Test' and also print some text that describes which problem it is.
 ;; For example
 
+;; WHEN YOU ARE DONE - email your exam, while still in the room, to jack.widman@gmail.com
+
 ;; SAMPLE PROBLEM - Write a function that squares a number.
 (define (square n)
   (* n n))
