@@ -90,7 +90,7 @@
 
 ;; Problem 19 - Find all palindromes in the file words.txt. Remember a palindrome is a word that is the same forwards and backwards. 
 
-;; Problem 20 Create a variable called width and set it to 300. Your'e welcome. 
+;; Problem 20 Create a variable called width and set it to 300. You're welcome. 
 
 
 ;; Extra Credits
