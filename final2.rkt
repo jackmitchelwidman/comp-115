@@ -111,6 +111,11 @@
 
 ;; Problem 18 - Use your is-twin-prime-pair? function to create a list of all the twin prime pairs under 10,000
 
+;; EXPLANATORY COMMENT - If you follow the 3 steps below, you will first have a list of all primes less than 10,000, and then you will transform that into the list
+;;                       (list (list 2  4) (list 3 5) (list 5 7) (list 7 0) etc
+;;                       THIS is the list you will filter. And you will filter it with the function is-twin-prime-pair?. This will result in the list 
+;;                       (list (list 3 5) (list 5 7) (list 11 13) (list 17 19) etc
+
 ;; HINT (in 3 steps) - If you want to filter, the list you need to filter needs to be pairs. One way to do this is to first take
 ;;        all primes, less than 10,000, then map this list of primes to a list of pairs (p, p+2) for all p and then
 ;;        filter by is-twin-prime-pair?
